@@ -18,9 +18,10 @@
             background-image: url('./Gambar\ WhatsApp\ 2024-08-10\ pukul\ 15.02.32_8eb8f000.jpg');
             background-attachment: fixed;
             background-position: center;
-            background-repeat: no-repeat;
+            background-repeat: repeat;
             background-size: auto;
-              /* font-family: 'Poppins', sans-serif; */
+
+            /* font-family: 'Poppins', sans-serif; */
 
         }
 
@@ -33,7 +34,11 @@
 
             opacity: 0.95;
         }
-        
+
+        .dark-mode-tambahan {
+            background-blend-mode: soft-light;
+
+        }
     </style>
 </head>
 
@@ -43,8 +48,10 @@
     <div class="container px-xl-5">
         <div class="mx-xl-5">
 
-            <div class="card mb-3 bg-slightly-transparent">
-                <img class="card-img-top" src="./Header-No-Assets Al-Fath.jpg" alt="">
+            <div class="card mb-3  bg-slightly-transparent ">
+
+                <button style="border: 0cap; background: none;" onclick="changeTheme()"> <img
+                        class="card-img-top rounded" src="./Header-No-Assets Al-Fath.jpg" alt=""> </button>
 
             </div>
 
@@ -61,6 +68,7 @@
                     <!--  -->
                     <div class="card-header">
                         <h1 class="text-center"> <b> 📰Pembuatan Berita Acara 📰</b></h1>
+
                     </div>
                     <div class="card-body">
                         <p class="whitespace-pre-line ">
@@ -274,9 +282,8 @@
                             - Gedung Serba Guna (GSG)
                             - platform online (google meet)
                         </p>
-                        <input type="text" name="tempat" id="tempat" required
-                            placeholder="Masukan Jawaban Kamu" class="form-control"
-                            aria-describedby="Masukan data dengan benar">
+                        <input type="text" name="tempat" id="tempat" required placeholder="Masukan Jawaban Kamu"
+                            class="form-control" aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
                 <div class="card mb-3 bg-slightly-transparent">
@@ -405,7 +412,7 @@
 
 
         function updateLocation() {
-            
+
             if (navigator.geolocation) {
                 console.log("coba" + navigator.geolocation);
                 navigator.geolocation.getCurrentPosition((position) => {
@@ -415,7 +422,7 @@
                     document.getElementById('longitude').value = longitude;
                 }, (error) => {
                     console.info('Error:', error);
-                    document.getElementById('current-location').textContent = 'Not available' 
+                    document.getElementById('current-location').textContent = 'Not available'
                 });
             } else {
                 document.getElementById('current-location').textContent = 'Not supported';
@@ -423,7 +430,11 @@
         }
         // Load cached data
         window.addEventListener('load', () => {
-         
+            if (document.documentElement.getAttribute('data-bs-theme') == 'dark' || localStorage.getItem('dark-mode') == 'true' || localStorage.getItem('theme') == 'dark') {
+                document.querySelectorAll('.bg-slightly-transparent').forEach((element) => {
+                    element.classList.add('dark-mode-tambahan');
+                });
+            }
             setDeadline(deadline);
             updateLocation();
 
@@ -446,7 +457,6 @@
             }
         });
         formulir.addEventListener('submit', async (event) => {
-            console.log('formul ir ' + formulir.checkValidity());
             event.preventDefault();
             if (formulir.checkValidity()) {
                 changeSubmitToLoading();
@@ -454,14 +464,14 @@
                 const data = Object.fromEntries(formData);
                 localStorage.setItem('formData', JSON.stringify(data));
                 data.interests = formData.getAll('interests');
-                const {row, receivedData} = await sendToSpreadsheet(data);
-                if (row){
+                const { row, receivedData } = await sendToSpreadsheet(data);
+                if (row) {
                     showSuccessSendForm(row, receivedData);
 
-                }else{
+                } else {
                     alert('Gagal mengirimkan formulir');
                     location.reload(true);
-                    
+
 
                 }
             } else {
@@ -482,7 +492,7 @@
         `;
 
         }
-        
+
 
         function showSuccessSendForm(lastrow, receivedData = "") {
             formulir.innerHTML =
@@ -495,6 +505,8 @@
                 <p class="lead">Formulir anda berhasil tersimpan pada baris ke - ${lastrow}</p>
                 <div class="mt-4">
  <a href="${receivedData}" class="btn btn-success" >Hasil</a>
+ <a class="btn btn-primary" onclick="location.reload(true)">Kembali</a>
+ <a class="btn btn-danger" onclick="window.close()">Tutup</a>
                     <!-- Optional: Add more buttons or links as needed -->
                 </div>
             </div>
@@ -520,7 +532,7 @@
                 if (response.ok) {
                     const result = await response.json();
                     localStorage.setItem('formData', JSON.stringify(data));
-                    console.info(result) 
+                    console.info(result)
                     console.log('Success:' + result.row);
                     return result;
 
@@ -531,6 +543,19 @@
             } catch (error) {
                 console.error('Error:', error);
             } finally {
+            }
+        }
+
+        function changeTheme() {
+            const theme = document.documentElement.getAttribute('data-bs-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+
+            } else {
+                document.querySelectorAll('.bg-slightly-transparent').forEach((element) => {
+                    element.classList.add('dark-mode-tambahan');
+                });
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
             }
         }
 
