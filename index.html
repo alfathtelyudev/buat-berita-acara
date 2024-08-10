@@ -32,7 +32,7 @@
             background-repeat: repeat;
             background-size: cover;
 
-            opacity: 0.95;
+            opacity: 0.90;
         }
 
         .dark-mode-tambahan {
@@ -392,20 +392,24 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
-        const deadline = "2024-08-09T23:59:59+07:00";
+        const deadline = new Date("2024-11-30T22:20:00+07:00");
+
         const formulir = document.getElementById('formulir');
         setInterval(updateCurrentTime, 1000);
 
-        function setDeadline(deadline) {
-            const deadlineDate = new Date(deadline);
+        function setDeadline(deadlineDate) {
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
             document.getElementById('deadline').textContent = deadlineDate.toLocaleString('id-ID', options);
 
 
         }
         function updateCurrentTime() {
+
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
             const currentTime = new Date().toLocaleString('id-ID', options);
+            if(new Date() - deadline>0){
+                hasDeadline()
+            }
 
             document.getElementById('current-time').textContent = currentTime;
         }
@@ -514,6 +518,24 @@
         </div>
         `
         }
+        function hasDeadline() {
+            formulir.innerHTML =
+                `
+        <div class="card mb-3 bg-slightly-transparent">
+                            <div class="card-body">
+
+            <div class="text-center">
+                <h1 class="display-4 text-danger">Waktu Habis</h1>
+                <p class="lead">Maaf, waktu pengisian formulir ini sudah habis</p>
+                <div class="mt-4">
+ <a class="btn btn-danger" onclick="window.close()">Tutup</a>
+                    <!-- Optional: Add more buttons or links as needed -->
+                </div>
+            </div>
+            </div>
+        </div>
+        `
+        }
         async function sendToSpreadsheet(data) {
             try {
                 const response = await fetch('https://script.google.com/macros/s/AKfycbyHZfNDREu_41k7WTyZWL3g6t3tB5tgtYEGGjFMVwRb2aHhgXTyOBArtNn0v7pBGycOKA/exec?externalEntity=web', {
@@ -558,6 +580,7 @@
                 document.documentElement.setAttribute('data-bs-theme', 'dark');
             }
         }
+        
 
 
     </script>
