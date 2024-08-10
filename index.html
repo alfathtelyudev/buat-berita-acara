@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         .whitespace-pre-line {
@@ -21,18 +22,17 @@
             background-repeat: repeat;
             background-size: auto;
 
-            /* font-family: 'Poppins', sans-serif; */
+            font-family: 'Poppins', sans-serif;
 
         }
 
-        .bg-slightly-transparent {
+        .bg-paper {
             /* bacmround with image, and repeat */
 
             background-image: url('./bg.png');
             background-repeat: repeat;
             background-size: cover;
 
-            opacity: 0.90;
         }
 
         .dark-mode-tambahan {
@@ -48,7 +48,7 @@
     <div class="container px-xl-5">
         <div class="mx-xl-5">
 
-            <div class="card mb-3  bg-slightly-transparent ">
+            <div class="card mb-3  bg-paper ">
 
                 <button style="border: 0cap; background: none;" onclick="changeTheme()"> <img
                         class="card-img-top rounded" src="./Header-No-Assets Al-Fath.jpg" alt=""> </button>
@@ -58,7 +58,7 @@
 
             <form id="formulir" class="mb-3  needs-validation" novalidate>
 
-                <div class="card mb-3 bg-slightly-transparent ">
+                <div class="card mb-3 bg-paper ">
                     <div class="d-flex justify-content-around align-items-center">
                         <img class="card-img-top d-block " alt="">
 
@@ -121,7 +121,7 @@
                 </div> <!-- card -->
 
                 <!--Boostrapt Card -->
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <!-- <img class="card-img-top d-block text-center" src="LOGO WARNA.png"  style="width: 50px; height: auto;" alt=""> -->
                     <div class="card-body">
                         <h4 class="card-title">Step By Step</h4>
@@ -139,10 +139,10 @@
                         </p>
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-3" for="asal">
-                            <h6> Asal Departemen / Fakultas</h6>
+                            <h5> Asal Departemen / Fakultas</h5>
                         </label>
                         <br>
                         <div class="btn-group " role="group">
@@ -168,60 +168,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-3" for="email">
-                            <h6> Email Pembuat Berita Acara
-                            </h6>
+                            <h5> Email Pembuat Berita Acara
+                            </h5>
                         </label>
                         <input type="email" name="email" id="email" required placeholder="Masukan Jawaban Kamu"
                             class="form-control" aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-3" for="nama_sekretaris">
-                            <h6> Nama Sekretaris Kegiatan</h6>
+                            <h5> Nama Sekretaris Kegiatan</h5>
                         </label>
                         <input type="text" name="nama_sekretaris" id="nama_sekretaris" required
                             placeholder="Masukan Jawaban Kamu" class="form-control"
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-3" for="nim_sekretaris">
-                            <h6> NIM Sekretaris Kegiatan</h6>
+                            <h5> NIM Sekretaris Kegiatan</h5>
                         </label>
                         <input type="number" name="nim_sekretaris" id="nim_sekretaris" required
                             placeholder="Masukan Jawaban Kamu" class="form-control"
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-3" for="nama_ketua_pelaksana">
-                            <h6> Nama Ketua Pelaksana</h6>
+                            <h5> Nama Ketua Pelaksana</h5>
                         </label>
                         <input type="text" name="nama_ketua_pelaksana" id="nama_ketua_pelaksana" required
                             placeholder="Masukan Jawaban Kamu" class="form-control"
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-3" for="nim_ketua_pelaksana">
-                            <h6> NIM Ketua Pelaksana</h6>
+                            <h5> NIM Ketua Pelaksana</h5>
                         </label>
                         <input type="number" name="nim_ketua_pelaksana" id="nim_ketua_pelaksana" required
                             placeholder="Masukan Jawaban Kamu" class="form-control"
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-3" for="nama_kepanitiaan">
-                            <h6> Penyelenggara/Panitia Kegiatan</h6>
+                            <h5> Penyelenggara/Panitia Kegiatan</h5>
                         </label>
                         <p class="whitespace-pre-line">Jika ada nama kepanitiaan, gunakan nama kepanitiaan tersebut.
                             Jika
@@ -238,10 +238,10 @@
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-1" for="nama_kegiatan">
-                            <h6>Nama Kegiatan</h6>
+                            <h5>Nama Kegiatan</h5>
                         </label>
                         <p class="whitespace-pre-line">Contoh: Big Class 2</p>
                         <input type="text" name="nama_kegiatan" id="nama_kegiatan" required
@@ -250,10 +250,10 @@
                     </div>
                 </div>
 
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-1" for="tanggal_lengkap_acara">
-                            <h6>Tanggal Kegiatan</h6>
+                            <h5>Tanggal Kegiatan</h5>
                         </label>
                         <p class="whitespace-pre-line">Keterangan: Tanggal disini berupa tanggal kegiatan dilaksanakan
                         </p>
@@ -262,10 +262,10 @@
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-1" for="jam_selesai">
-                            <h6>Jam Kegiatan Selesai</h6>
+                            <h5>Jam Kegiatan Selesai</h5>
                         </label>
                         <p class="whitespace-pre-line">Keterangan: Bisa berupa perkiraan selesai</p>
                         <input type="time" name="jam_selesai" id="jam_selesai" required
@@ -273,10 +273,10 @@
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-1" for="tempat">
-                            <h6>Tempat Kegiatan </h6>
+                            <h5>Tempat Kegiatan </h5>
                         </label>
                         <p class="whitespace-pre-line">Contoh:
                             - Gedung Serba Guna (GSG)
@@ -286,10 +286,10 @@
                             class="form-control" aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-1" for="jumlah_peserta">
-                            <h6>Jumlah peserta </h6>
+                            <h5>Jumlah peserta </h5>
                         </label>
                         <p class="whitespace-pre-line">Kita tidak tahu pastinya, bisa perkiraan saja
                             contoh (pilih salah satu):
@@ -303,10 +303,10 @@
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-1" for="rangkaian_kegiatan">
-                            <h6>Rangkaian Kegiatan </h6>
+                            <h5>Rangkaian Kegiatan </h5>
                         </label>
                         <p class="whitespace-pre-line">isinya berupa gambaran kasar kegiatannya
                             bisa disertai link realisasi rundown (optional)
@@ -318,10 +318,10 @@
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-1" for="dokumentasi">
-                            <h6>Link Dokumentasi Kegiatan </h6>
+                            <h5>Link Dokumentasi Kegiatan </h5>
                         </label>
                         <p class="whitespace-pre-line">bisa berupa link google drive yang berisi dokumentasi dari acara
                             tersebut
@@ -331,10 +331,10 @@
                             aria-describedby="Masukan data dengan benar">
                     </div>
                 </div>
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body">
                         <label class="form-label mb-1" for="kota_pembuatan_surat">
-                            <h6>Kota/Kabupaten Pelaksanaan Kegiatan </h6>
+                            <h5>Kota/Kabupaten Pelaksanaan Kegiatan </h5>
                         </label>
                         <p class="whitespace-pre-line">Contoh: Bandung
                         </p>
@@ -345,7 +345,7 @@
                 </div>
                 <input type="hidden" id="latitude" name="latitude">
                 <input type="hidden" id="longitude" name="longitude">
-                <div class="card mb-3 bg-slightly-transparent">
+                <div class="card mb-3 bg-paper">
                     <div class="card-body  ">
 
                         <button type="submit" class="btn btn-outline-primary ">Submit</button>
@@ -357,7 +357,7 @@
             </form>
 
 
-            <footer class="card mb-3 bg-slightly-transparent">
+            <footer class="card mb-3 bg-paper">
                 <div class="card-footer text-muted">
                     <div class="row">
                         <div class="col-md-4 ">
@@ -371,9 +371,9 @@
                         </div>
                     </div>
                     <p class="text-center">📰 Pembuatan Berita Acara LDK Al-Fath 2024 📰</p>
-                    <h6 class="text-muted text-center "> <a href="https://www.instagram.com/alfathtelu/"> LDK Al-Fath
+                    <h5 class="text-muted text-center "> <a href="https://www.instagram.com/alfathtelu/"> LDK Al-Fath
                             Telkom
-                            University Gen 11</a></h6>
+                            University Gen 11</a></h5>
 
 
                     <p class="text-muted text-center  opacity-25"> <a
@@ -435,7 +435,7 @@
         // Load cached data
         window.addEventListener('load', () => {
             if (document.documentElement.getAttribute('data-bs-theme') == 'dark' || localStorage.getItem('dark-mode') == 'true' || localStorage.getItem('theme') == 'dark') {
-                document.querySelectorAll('.bg-slightly-transparent').forEach((element) => {
+                document.querySelectorAll('.bg-paper').forEach((element) => {
                     element.classList.add('dark-mode-tambahan');
                 });
             }
@@ -501,7 +501,7 @@
         function showSuccessSendForm(lastrow, receivedData = "") {
             formulir.innerHTML =
                 `
-        <div class="card mb-3 bg-slightly-transparent">
+        <div class="card mb-3 bg-paper">
                             <div class="card-body">
 
             <div class="text-center">
@@ -521,7 +521,7 @@
         function hasDeadline() {
             formulir.innerHTML =
                 `
-        <div class="card mb-3 bg-slightly-transparent">
+        <div class="card mb-3 bg-paper">
                             <div class="card-body">
 
             <div class="text-center">
@@ -574,7 +574,7 @@
                 document.documentElement.setAttribute('data-bs-theme', 'light');
 
             } else {
-                document.querySelectorAll('.bg-slightly-transparent').forEach((element) => {
+                document.querySelectorAll('.bg-paper').forEach((element) => {
                     element.classList.add('dark-mode-tambahan');
                 });
                 document.documentElement.setAttribute('data-bs-theme', 'dark');
